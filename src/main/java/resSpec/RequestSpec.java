@@ -17,4 +17,15 @@ public class RequestSpec {
         return request;
 
     }
+
+
+    public RequestSpecification resSpecGet(String baseUrl){
+
+        RequestSpecification request = RestAssured.given();
+        request.spec(new RequestSpecBuilder().setContentType(ContentType.JSON).build().log().all());
+        request.baseUri(baseUrl);
+
+        return request;
+
+    }
 }
