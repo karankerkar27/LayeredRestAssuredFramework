@@ -26,7 +26,7 @@ public class GetBookingIdsApi {
 
         RequestSpecification res = requestSpec.resSpecGet(baseUrl);
 
-        response = rest.get(res);
+        response = rest.post(res);
 
         return response;
 
