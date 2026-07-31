@@ -28,4 +28,16 @@ public class RequestSpec {
         return request;
 
     }
+
+
+    public RequestSpecification resSpecPost(String baseUrl, Object obj){
+
+        RequestSpecification request = RestAssured.given();
+        request.spec(new RequestSpecBuilder().setContentType(ContentType.JSON).build().log().all());
+        request.baseUri(baseUrl);
+        request.body(obj);
+
+        return request;
+
+    }
 }
